@@ -19,6 +19,8 @@ public class Flatulence {
 
 	@Instance("farts")
 	public static Flatulence instance;
+	
+	private String test = "test";
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
