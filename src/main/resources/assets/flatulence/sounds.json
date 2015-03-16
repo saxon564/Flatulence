@@ -1,0 +1,4 @@
+{
+	"flatulence": {"category": "player","sounds": ["flatulence1", "flatulence2", "flatulence3", "flatulence4", "flatulence5", "flatulence7", "flatulence8", "flatulence9", "flatulence10", "flatulence11", "flatulence14", "flatulence15", "flatulence16", "flatulence17", "flatulence18", "flatulence19", "flatulence20", "flatulence21"]},
+	"waterFlatulence": {"category": "player","sounds": ["waterFlatulence1", "waterFlatulence2"]}
+}
