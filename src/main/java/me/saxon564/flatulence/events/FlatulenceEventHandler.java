@@ -60,13 +60,13 @@ public class FlatulenceEventHandler {
 	
 	public void runParticles(World world, EntityPlayer player) {
 		for (int i = 0; i < 20; i++) {
-			double posX = (double)player.posX + (MathHelper.cos(player.rotationYaw / 180.0F * (float)Math.PI) * 0.16F);
-			double posY = 0.10000000149011612D;
-			double posZ = (double)player.posZ + (MathHelper.sin(player.rotationYaw / 180.0F * (float)Math.PI) * 0.16F);
-            double d0 = rand.nextGaussian() * 0.02D;
-            double d1 = rand.nextGaussian() * 0.02D;
-            double d2 = rand.nextGaussian() * 0.02D;
-			world.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, posX + rand.nextDouble(), (double)player.posY + (double)rand.nextFloat() * player.height, posZ + rand.nextDouble(), 0, 0, 0, new int[0]);
+			double posX = (double)player.posX + (double)(this.rand.nextFloat() * player.width * 2.0F) - (double)player.width;
+			double posY = player.posY + 0.8D + (double)(this.rand.nextFloat() * (player.height / 4));
+			double posZ = (double)player.posZ + (double)(this.rand.nextFloat() * player.width * 2.0F) - (double)player.width;
+            double d0 = this.rand.nextGaussian() * 0.02D;
+            double d1 = this.rand.nextGaussian() * 0.02D;
+            double d2 = this.rand.nextGaussian() * 0.02D;
+            world.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, posX, posY, posZ, d0, d1, d2, new int[0]);
 		}
 	}
 
