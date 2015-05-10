@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "modid": "flatulence",
+  "name": "Flatulence",
+  "description": "It's as simple as the name! This mod adds the ability to flatulate to the game!",
+  "version": "0.1",
+  "mcversion": "1.8",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["saxon564"],
+  "credits": "Marc of AdultsOnlyMinecraft for coming up with this idea for a mod!",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -3,6 +3,7 @@ package me.saxon564.flatulence;
 import me.saxon564.flatulence.events.FlatulenceEventHandler;
 import me.saxon564.flatulence.proxies.CommonProxyFlatulence;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -20,10 +21,17 @@ public class Flatulence {
 	@Instance("farts")
 	public static Flatulence instance;
 	
-	private String test = "test";
+	public static int tickDelay;
+	public static boolean allowCreative;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		
+		Configuration config = new Configuration(
+	            event.getSuggestedConfigurationFile());
+		tickDelay = config.get("Flatulence", "Second Between Flatulence", 5).getInt();
+		allowCreative = config.get("Flatulence", "Allow Flatulence in Creative", false).getBoolean(false);
+		
 		MinecraftForge.EVENT_BUS.register(new FlatulenceEventHandler());
 		FMLCommonHandler.instance().bus().register(new FlatulenceEventHandler());
 	}
