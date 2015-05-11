@@ -31,6 +31,7 @@ public class Flatulence {
 	            event.getSuggestedConfigurationFile());
 		tickDelay = config.get("Flatulence", "Second Between Flatulence", 5).getInt();
 		allowCreative = config.get("Flatulence", "Allow Flatulence in Creative", false).getBoolean(false);
+		config.save();
 		
 		MinecraftForge.EVENT_BUS.register(new FlatulenceEventHandler());
 		FMLCommonHandler.instance().bus().register(new FlatulenceEventHandler());

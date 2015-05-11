@@ -26,7 +26,7 @@ public class FlatulenceEventHandler {
 		EntityPlayer player = (EntityPlayer) event.player.getCommandSenderEntity();
 		World world = player.worldObj;
 		
-		if (world.isRemote && player.isSneaking() && !player.isSpectator() && (!player.capabilities.isCreativeMode && Flatulence.allowCreative)) {
+		if (world.isRemote && player.isSneaking() && !player.isSpectator() && (!player.capabilities.isCreativeMode == !Flatulence.allowCreative)) {
 			if (t <= 1) {
 				t = Flatulence.tickDelay * 20;
 				
@@ -64,7 +64,8 @@ public class FlatulenceEventHandler {
 	
 	public void runParticles(World world, EntityPlayer player) {
 		for (int i = 0; i < 20; i++) {
-			Vec3 vec = player.getLookVec();
+			float yaw = player.rotationYaw;
+			Vec3 vec = player.getLook(yaw);
 			double posX = ((double)player.posX - (vec.xCoord * 0.25)) + (double)(this.rand.nextFloat() * player.width * 0.75F) - (player.width * 0.5);
 			double posY = player.posY + 0.8D + (double)(this.rand.nextFloat() * (player.height / 2));
 			double posZ = ((double)player.posZ  - (vec.zCoord * 0.25)) + (double)(this.rand.nextFloat() * player.width * 0.75F) - (player.width * 0.5);
